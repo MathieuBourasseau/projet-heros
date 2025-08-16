@@ -1,0 +1,530 @@
+body {
+    font-family: 'Satoshi', sans-serif;
+    --color-black : #000000;
+    --color-white : #fcfcff;
+    --color-grey : #4d4d4d;
+    --color-purple :#7E78C5 ;
+    --secondary-purple : #A29BFE;
+    --default-spacing : 1rem;
+    --h2-spacing : 3rem;
+    background-color: var(--color-black);
+    color : var(--color-white);
+}
+
+a {
+    color: var(--color-white);
+}
+
+a:hover {
+    color : var(--color-purple);
+}
+
+.h2{
+    display : flex;
+    gap : .7rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position : relative;
+    margin-bottom: var(--h2-spacing);
+}
+
+.h2::before,
+.h2::after {
+    content : "";
+    height: 2px;
+    background-color:  var(--color-purple);
+    width: 10px;
+    margin-right : 1rem;
+    margin-left : 1rem;
+}
+
+.heros-league::before,
+.heros-league::after {
+    display: none;
+}
+
+#heros-league__subtitle,
+#super-héros__subtitle{
+    color: var(--color-purple);
+}
+
+/* Style et mise en page du header */
+
+.header {
+    display : flex;
+    position : sticky;
+    z-index: 1;
+    top : 0px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: #00000077;
+    transition : 0.2s ease-in-out;
+}
+.header:hover {
+    background-color: var(--color-black);
+}
+
+.header-links {
+    margin: var(--default-spacing);
+    font-weight:500
+}
+
+/* Style de la section Heros League */
+
+.heros-league-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin : 1rem 2rem 3rem 2rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(../images/hero-banner.png);
+    background-repeat: no-repeat;
+    background-size : cover;
+    border-radius: 30px;
+}
+
+.heros-league-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heros-league {
+    font-size: 3.7rem;
+    font-weight: 800;
+    margin-bottom: var(--default-spacing);
+    color: #dcd7d7;
+}
+
+.heros-league__subtitle {
+    font-weight: 600;
+    color: #dcd7d7;
+    font-size: 1.2rem;
+}
+
+/* Style de la section supers services */
+
+.super-services {
+    margin-bottom: 3rem;
+}
+
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap : 15px;
+    margin: 1rem 3rem 1rem 3rem;
+}
+
+.article-container-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-purple);
+    border-radius: 15px;
+    padding: var(--default-spacing);
+}
+
+.déménagement {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.repas {
+    grid-column : span 2;
+    grid-row : span 1;
+}
+
+.bouchons {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sauvetage {
+    grid-column : span 1;
+    grid-row: span 2;
+}
+
+.moral {
+    grid-column: span 2;
+    grid-row : span 1;
+}
+
+.article-container-service__title {
+    color: var(--color-purple);
+    font-size: 1.7rem;
+    font-weight:900;
+}
+
+.article-container-service__text {
+    text-transform: uppercase;
+    margin-bottom: var(--default-spacing);
+}
+
+.article-container-service__btn {
+    background-color: var(--secondary-purple);
+    color: var(--color-white);
+    font-weight:800;
+    padding : .5rem 1.5rem;
+    border-radius: 15px;
+    border : none;
+}
+
+.service-description-container {
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    margin-bottom : 2.5rem;
+}
+
+.article-container-service__italic {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: var(--default-spacing);
+}
+
+/* Style section supers héros */
+
+.super-héros {
+    margin: 1rem 1rem 5rem 1rem;
+    text-align: center;
+}
+
+.super-heros-container {
+    display : grid; 
+    grid-template-columns : repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap : 15px;
+    margin-bottom: 3.5rem;
+}
+
+.article-heros-pic {
+    border-radius: 15px;
+    filter: brightness(85%);
+    height: 100%;
+}
+
+.article-heros-full-introduction {
+    position : relative;
+    height: 100%;
+}
+
+.article-heros-introduction {
+    position: absolute;
+    bottom : 0;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.419);
+    border-radius : 0 0 15px 15px;
+    padding: 1.5rem;
+}
+
+.article-heros__hidden {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #7e78c5a8;
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem;
+    transform: translateY(-20px);
+    transition : ease-in-out 0.3s;
+    opacity: 0;
+}
+
+.article-heros:hover .article-heros__hidden{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.discover-heros {
+    text-align: center;
+    background-color: #A29BFE;
+    padding : .5rem 1.5rem;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin : var(--default-spacing)
+}
+
+.discover-heros:hover {
+    color : white;
+}
+
+/* Style de la section témoignages de nos clients */
+
+.customers-testimonials {
+    margin-bottom: 5rem;
+}
+
+.testimony-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap : 5rem;
+    margin: 1rem 3rem 1rem 3rem;
+}
+
+.customers-testimony {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-purple);
+    border-radius: 200px 200px 27px 27px;
+    text-align: center;
+}
+
+.customers-testimony__pic {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid #bdb9ff;
+    margin-bottom: 1rem;
+}
+
+.customer-word-container{
+    margin: 1rem;
+}
+
+.customers-testimony__name{
+    margin-bottom: var(--default-spacing);
+}
+
+/* Style du footer sur la première partie  */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-first-part {
+    width: 50%;
+    margin-bottom: 2.5rem;
+}
+
+.form-fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+.form-fieldset__field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--default-spacing);
+}
+
+.label {
+    font-weight: 600;
+    margin-bottom: .7rem;
+}
+
+.field {
+    width: 100%;
+    background-color: var(--color-grey) ;
+    padding : .6rem;
+    border-style: none;
+    border-radius: 15px;
+    color: var(--color-white);
+}
+
+.field:focus {
+    outline : .2rem solid var(--color-purple);
+}
+
+.field::placeholder {
+    color: white;
+    font-weight:700
+}
+
+select {
+    font-weight: 700;
+}
+
+#message {
+    min-height: 20vh;
+    resize: none;
+}
+
+.btn_form {
+    background-color: var(--secondary-purple);
+    border-style: none;
+    border-radius : 15px;
+    padding: .4rem 1.2rem;
+    color: var(--color-white);
+    font-weight: 700;
+    margin: var(--default-spacing);
+}
+
+/* Style du footer sur la seconde partie */
+
+.footer-second-part {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-purple);
+    width: 100%;
+    padding: 2rem 1rem;
+    border-radius: 15% 15% 0 0;
+}
+
+.footer-second-part__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--default-spacing);
+}
+
+.footer-nav {
+    display : flex;
+    width: 30%;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.footer-nav__links {
+    transition: .2s ease-in-out;
+}
+
+.footer-nav__links:hover {
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+/* ---------- Gestion des medias queries ------------ */
+
+/* Pour tablettes */
+
+@media ( 769px < width < 1279px) {
+    .header{
+        flex-direction: column;
+    }
+    .h1 {
+        margin-bottom : .8rem;
+    }
+    .articles-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+    .déménagement,
+    .repas,
+    .bouchons,
+    .sauvetage {
+        grid-column : span 1;
+        grid-row : span 1;
+    }
+    .moral {
+        grid-column : span 2;
+        grid-row : span 1;
+    }
+    .article-container-services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .super-heros-container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+    .article-heros {
+        grid-column : span 1;
+        grid-row : span 1;
+    }
+    .testimony-container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 1rem;
+    }
+    .footer-first-part {
+        min-width: 80%;
+    }
+    .footer-nav {
+        min-width: 60%;
+    }
+}
+
+/* Pour mobile  */
+
+@media (width < 768px){
+    h2::before,
+    h2::after {
+        display: none;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav {
+        display: none;
+    }
+    .heros-league-image{
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;       
+        background-size : cover;
+        background-position: center;
+    }
+    .heros-league {
+        font-size: 2.5rem;
+    }
+    .heros-league__subtitle{
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.56);
+    }
+    .articles-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .super-heros-container {
+        display: flex;
+        flex-direction : column;
+        gap : 1.4rem
+    }
+    .customers-testimonials__title{
+        text-align: center;
+    }
+    .testimony-container {
+        display: flex;
+        flex-direction: column;
+        gap : 1.5rem;
+    }
+    .footer-first-part {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .field {
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+    .field::placeholder {
+    color: white;
+    font-weight:700
+    }
+    .footer-second-part{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap : 1rem;
+    }
+}
